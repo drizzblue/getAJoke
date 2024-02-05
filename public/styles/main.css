@@ -1,0 +1,40 @@
+
+body{
+    background-color: coral;
+}
+
+h1{
+    color: indigo;
+}
+.container{
+    width: 800px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.dropdown{
+    width: 200px;
+}
+
+.btnSubmit {
+    width: 80px;
+}
+
+#myForm{
+    margin: 20px auto;
+}
+
+.jokeContainer{
+    position: relative;
+}
+
+.jokePosition {
+    position: absolute;
+    top:50%;
+    transform: translate(0,-50%);
+    padding-left: 5%;
+    width: 35%;
+    text-wrap: wrap;
+    font-size: 1.4rem;
+    font-family: 'Wendy One', sans-serif;
+}

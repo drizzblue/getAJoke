@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Have a Laugh</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+    <div class="container">
+    <h1>Get a Joke</h1>
+    <form id="myForm" action="/getJoke" method="post">
+        <select id="selectCategory" name="selectedCategory" class="dropdown">
+            <% if(locals.categories){ %>
+                <% categories.forEach(category => { %>
+                   <option value='<%= category %>'><%= category %></option> 
+                <% }); %>
+                <option></option>
+            <% } %>
+        </select>
+        <input id="getJoke" class="btnSubmit" type="submit" value="Get">
+    </form>
+    <div class="jokeContainer">
+        <img src="images/markus-winkler-8cP_6sC7Hhw-unsplash.jpg" height="600">
+        <div class="jokePosition">
+            <% if(locals.joke){ %>
+                <% if(joke.type == 'twopart'){ %>
+                    <%= joke.setup %> <br><br>
+                    <%= joke.delivery %>
+                <% } else { %>
+                    <%= joke.joke %>
+                <% } %>
+            <% } %>
+        </div>
+    </div>
+</div>
+</body>
+</html>
